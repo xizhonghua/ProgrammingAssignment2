@@ -3,6 +3,11 @@
 
 ## Make an object that contains a matrix
 ## and whose inverse is cacheable
+## 
+## Usage:
+## x <- makeCacheMatrix()
+## x$set(matrix(rnorm(9),3,3))
+## x$get()
 
 makeCacheMatrix <- function(x = matrix()) {
     
@@ -28,6 +33,12 @@ makeCacheMatrix <- function(x = matrix()) {
 ##     return it directly
 ## otherwise
 ##    compute, cache and return the inverse
+## 
+## Example usage:
+## x <- makeCacheMatrix(rnorm(9),3,3)
+## cacheSolve(x)
+## ## inverse of x is cached, no computational cost
+## cacheSolve(x) 
 
 cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
